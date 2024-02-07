@@ -15,22 +15,34 @@ the current version currently supports validation of:
 - [installation](#installation)
 - [usage](#usage)
 - [contributing](#contributing)
-- [releases](#releases)
 
 ## installation
 
-to use check-mate in your Java project you can add it as a dependency in your Maven project's `pom.xml` file:
+to use check-mate in your Java project you can add it as a dependency in your Maven `pom.xml` file:
 ```xml
-<dependency>
-    <groupId>io.github.dulait</groupId>
-    <artifactId>check-mate</artifactId>
-    <version>1.1.0-alpha</version>
-</dependency>
+<repositories>
+    <repository>
+        <id>github</id>
+        <url>https://dulait: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@maven.pkg.github.com/dulait/check-mate</url>
+    </repository>
+</repositories>
+
+<dependencies>
+    <dependency>
+        <groupId>io.github.dulait</groupId>
+        <artifactId>check-mate</artifactId>
+        <version>1.1.0-alpha</version>
+    </dependency>
+</dependencies>
 ```
 for Gradle projects, add the following to your `build.gradle` file
 ```groovy
 implementation 'io.github.dulait:check-mate:1.1.0-alpha'
 ```
+
+if you want to add it as an external library go to the [releases](https://github.com/dulait/check-mate/releases) page and download the latest version. <br>
+you can now simply add it into the `lib` folder of your project. <br>
+make sure to include the `javadoc.jar` file with the `.jar` file.
 
 ## usage
 
@@ -69,7 +81,6 @@ public class Main {
     }
 }
 ```
-
 
 ## contributing
 
