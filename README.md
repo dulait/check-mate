@@ -65,7 +65,7 @@ public class Main {
         String isbn10 = "0-596-52068-7";
 
         // this method generates a valid isbn10 number, if every part of the number is valid except the check-digit
-        System.out.println(ISBNValidator.validateISBN10(isbn10)); // 0-596-52068-9
+        System.out.println(ISBNValidator.getInstance().validateISBN10(isbn10)); // 0-596-52068-9
     }
 }
 ```
