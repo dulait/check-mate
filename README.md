@@ -88,7 +88,7 @@ as this is a solo-project and there might be fundamental mistakes, all contribut
 to contribute to the project just simply:
 - fork the repository
 - create a new branch for your feature or bug fix: `git checkout -b feature/my-feature`
-- commit your changes: `git commit -m 'adequate comment`
+- commit your changes: `git commit -m "appropriate comment"`
 - push to your branch `git push origin feature/my-feature`
 - create a pull request explaining your changes and improvements (be as detailed as possible)
 
