@@ -1,7 +1,7 @@
 # check-mate
 [![GitHub Release](https://img.shields.io/github/v/release/dulait/check-mate?include_prereleases)](https://github.com/dulait/check-mate/releases)
 
-check-mate is a Java validation library designed to help with validating various standardized numbers.<br>
+check-mate is a Java library designed to help with validating various standardized numbers.<br>
 the current version currently supports validation of:
 - IBANs
 - ISBN-10 numbers
