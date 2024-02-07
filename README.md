@@ -18,7 +18,7 @@ the current version currently supports validation of:
 
 ## installation
 
-to use check-mate in your Java project you can add it as a dependency in your Maven `pom.xml` file:
+to use check-mate in your Java project you can add it as a dependency in your Maven `pom.xml` file, but you'll also need to use a PAT i generated for reading the maven package (since github doesn't allow unauthenticated requests to public maven packages, and uploading to maven central is too much work)
 ```xml
 <repositories>
     <repository>
@@ -35,6 +35,8 @@ to use check-mate in your Java project you can add it as a dependency in your Ma
     </dependency>
 </dependencies>
 ```
+
+
 for Gradle projects, add the following to your `build.gradle` file
 ```groovy
 implementation 'io.github.dulait:check-mate:1.1.0-alpha'
