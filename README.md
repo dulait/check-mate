@@ -81,4 +81,4 @@ to contribute to the project just simply:
 - push to your branch `git push origin feature/my-feature`
 - create a pull request explaining your changes and improvements (be as detailed as possible)
 
-also, make sure to look at the [code of conduct](CODE_OF_CONDUCT.md) & feel free to contact me for additional information if needed.
+also, make sure to look at the [code of conduct](CODE_OF_CONDUCT.txt) & feel free to contact me for additional information if needed.
