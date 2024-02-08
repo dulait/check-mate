@@ -68,7 +68,7 @@ that means that inserting data can be tricky if that last digit isn't valid. <br
 
 let's examine an example where the last digit of an ISBN-10 number might be invalid:
 ```java
-import com.checkmate.validation.CreditCardValidator;
+import com.checkmate.validation.ISBNValidator;
 
 public class Main {
     public static void main(String[] args) {
