@@ -56,13 +56,10 @@ import com.checkmate.validation.CreditCardValidator;
 
 public class Main {
     public static void main(String[] args) {
-        String creditCardNumber = "1234567812345670";
+        String creditCardNumber = "4111111111111111";
 
-        if (CreditCardValidator.getInstance().isValid(creditCardNumber)) {
-            System.out.println("Credit card number is valid!");
-        } else {
-            System.out.println("Invalid credit card number.");
-        }
+        // the CreditCardValidator class uses the Luhn algorithm to check if the number is valid
+        System.out.println(CreditCardValidator.getInstance().isValid(creditCardNumber)); // will print out true or false, in this case true
     }
 }
 ```
