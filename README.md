@@ -23,7 +23,7 @@ to use check-mate in your Java project you can add it as a dependency in your Ma
 <repositories>
     <repository>
         <id>github</id>
-        <url>https://dulait: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@maven.pkg.github.com/dulait/check-mate</url>
+        <url>https://dulait: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@maven.pkg.github.com/dulait/check-mate</url>
     </repository>
 </repositories>
 
