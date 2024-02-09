@@ -18,12 +18,13 @@ the current version currently supports validation of:
 
 ## installation
 
-to use check-mate in your Java project you can add it as a dependency in your Maven `pom.xml` file, but you'll also need to use a PAT i generated for reading the maven package (since github doesn't allow unauthenticated requests to public maven packages, and uploading to maven central is too much work)
+to use check-mate in your Java project you can add it as a dependency in your Maven `pom.xml` file, but you'll also need to use a personal access token. 
+ghp_A?G?K?R?R?O?F?V?4?Q?e?8?f?m?L?o?c?V?t?V?f?f?0?0?p?z?f?O?R?Q?3?K?d?O?D?K (**remove all the question marks**)
 ```xml
 <repositories>
     <repository>
         <id>github</id>
-        <url>https://dulait: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@maven.pkg.github.com/dulait/check-mate</url>
+        <url>https://dulait:personal_access_token@maven.pkg.github.com/dulait/check-mate</url>
     </repository>
 </repositories>
 
