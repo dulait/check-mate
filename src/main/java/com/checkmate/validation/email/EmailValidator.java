@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 /**
  * The EmailValidator class provides email validations
  *
- * @since 1.1.0-alpha
+ * @since 1.1.0
  */
 public class EmailValidator implements Validator<String> {
     private static final EmailValidator instance = new EmailValidator();
@@ -27,9 +27,9 @@ public class EmailValidator implements Validator<String> {
     }
 
     /**
-     * Default constructor for the EmailValidator class
+     * Private constructor for the EmailValidator class
      */
-    public EmailValidator() {
+    private EmailValidator() {
 
     }
 
@@ -40,6 +40,7 @@ public class EmailValidator implements Validator<String> {
      * @return {@code true} if the email address is valid, {@code false} otherwise.
      * @throws NullEmailException  if the email is null or an empty string.
      * @throws EmptyEmailException if the email is an empty string.
+     * @since 1.1.0
      */
     @Override
     public boolean isValid(String email) {
@@ -57,6 +58,7 @@ public class EmailValidator implements Validator<String> {
      * @return {@code true} if the email is null or an empty string, {@code false} otherwise.
      * @throws NullEmailException  if the email is null or an empty string.
      * @throws EmptyEmailException if the email is an empty string.
+     * @since 1.1.0
      */
     @Override
     public boolean isNullOrEmpty(String email) {

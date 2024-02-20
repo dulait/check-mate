@@ -10,17 +10,17 @@ import java.util.regex.Pattern;
 
 /**
  * The JMBGValidator class provides methods for validating
- * and generating JMBG (Serbian Unique Master Citizen Number) codes.
+ * and generating JMBG (Serbian Unique Master Citizen Number) numbers.
  *
- * @since 1.1.0-alpha
+ * @since @since 1.1.0
  */
 public class JMBGValidator implements Validator<String> {
     private static final JMBGValidator instance = new JMBGValidator();
 
     /**
-     * Default constructor for the JMBGValidator class
+     * Private constructor for the JMBGValidator class
      */
-    public JMBGValidator() {
+    private JMBGValidator() {
     }
 
     private static final int LENGTH = 13;
@@ -65,7 +65,7 @@ public class JMBGValidator implements Validator<String> {
      * @return {@code true} if the JMBG is valid, {@code false} otherwise.
      * @throws NullJMBGException  If the input JMBG is null.
      * @throws EmptyJMBGException if the input JMBG is an empty string.
-     * @since 1.0
+     * @since 1.1.0
      */
     @Override
     public boolean isValid(String jmbg) {
@@ -86,6 +86,7 @@ public class JMBGValidator implements Validator<String> {
      * @return A valid JMBG with the correct checksum digit, or {@code null} if the input JMBG is not valid.
      * @throws NullJMBGException  If the input JMBG is null.
      * @throws EmptyJMBGException if the input JMBG is an empty string.
+     * @since 1.1.0
      */
     public String validate(String jmbg) {
         if (isNullOrEmpty(jmbg)) {
@@ -113,6 +114,7 @@ public class JMBGValidator implements Validator<String> {
      * @return {@code true} if the JMBG is null or an empty string, {@code false} otherwise.
      * @throws NullJMBGException  if the JMBG is null or an empty string.
      * @throws EmptyJMBGException if the JMBG is an empty string.
+     * @since 1.1.0
      */
     @Override
     public boolean isNullOrEmpty(String jmbg) {

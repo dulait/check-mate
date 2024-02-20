@@ -2,8 +2,6 @@ package com.checkmate.validation.isbn;
 
 import com.checkmate.checksum.ISBN10Checksum;
 import com.checkmate.checksum.ISBN13Checksum;
-import com.checkmate.exceptions.iban.EmptyIBANException;
-import com.checkmate.exceptions.iban.NullIBANException;
 import com.checkmate.exceptions.isbn.EmptyISBNException;
 import com.checkmate.exceptions.isbn.NullISBNException;
 import com.checkmate.validation.Validator;
@@ -18,16 +16,16 @@ import java.util.regex.Pattern;
  * <a href="https://en.wikipedia.org/wiki/ISBN#Check_digits">the official Wikipedia page</a>
  * </p>
  *
- * @since 1.0
+ * @since 1.1.0
  */
 public class ISBNValidator implements Validator<String> {
 
     private static final ISBNValidator instance = new ISBNValidator();
 
     /**
-     * Default constructor for the ISBNValidator class
+     * Private constructor for the ISBNValidator class
      */
-    public ISBNValidator() {
+    private ISBNValidator() {
     }
 
     private static final String ISBN10_REGEX = "^(?:ISBN(?:-10)?:?|-)?(?=[0-9X]{10}$|(?=(?:[0-9]+[-]){3})[-0-9X]{13}$)[0-9]{1,5}[-]?[0-9]+[-]?[0-9]+[-]?[0-9X]$";
@@ -51,7 +49,7 @@ public class ISBNValidator implements Validator<String> {
      * @return {@code true} if the ISBN is valid, {@code false} otherwise.
      * @throws NullISBNException  if the input ISBN is null.
      * @throws EmptyISBNException if the input ISBN is an empty string.
-     * @since 1.0
+     * @since 1.1.0
      */
     @Override
     public boolean isValid(String isbn) {
@@ -65,7 +63,7 @@ public class ISBNValidator implements Validator<String> {
      * @return {@code true} if the ISBN is valid, {@code false} otherwise.
      * @throws NullISBNException  if the input ISBN is null.
      * @throws EmptyISBNException if the input ISBN is an empty string.
-     * @since 1.0
+     * @since 1.1.0
      */
     public boolean isValidISBN10(String isbn) {
         if (validateISBN10(isbn) == null) {
@@ -84,7 +82,7 @@ public class ISBNValidator implements Validator<String> {
      * @return {@code true} if the ISBN is valid, {@code false} otherwise.
      * @throws NullISBNException  if the input ISBN is null.
      * @throws EmptyISBNException if the input ISBN is an empty string.
-     * @since 1.0
+     * @since 1.1.0
      */
     public boolean isValidISBN13(String isbn) {
         if (validateISBN13(isbn) == null) {
@@ -109,7 +107,7 @@ public class ISBNValidator implements Validator<String> {
      * @return A valid ISBN-10 number (String) with the correct checksum digit, or {@code null} if the input ISBN-10 number is not valid.
      * @throws NullISBNException  If the input ISBN-10 number is null.
      * @throws EmptyISBNException if the input ISBN-10 number is an empty string.
-     * @since 1.0
+     * @since 1.1.0
      */
     public String validateISBN10(String isbn) {
         if (isNullOrEmpty(isbn)) {
@@ -138,7 +136,7 @@ public class ISBNValidator implements Validator<String> {
      * @return A valid ISBN-13 number (String) with the correct checksum digit, or {@code null} if the input ISBN-13 number is not valid.
      * @throws NullISBNException  If the input ISBN-13 number is null.
      * @throws EmptyISBNException if the input ISBN-13 number is an empty string.
-     * @since 1.0
+     * @since 1.1.0
      */
     public String validateISBN13(String isbn) {
         if (isNullOrEmpty(isbn)) {
@@ -176,8 +174,9 @@ public class ISBNValidator implements Validator<String> {
      *
      * @param isbn The ISBN to check.
      * @return {@code true} if the ISBN is null or an empty string, {@code false} otherwise.
-     * @throws NullIBANException  if the ISBN is null or an empty string.
-     * @throws EmptyIBANException if the ISBN is an empty string.
+     * @throws NullISBNException  if the ISBN is null or an empty string.
+     * @throws EmptyISBNException if the ISBN is an empty string.
+     * @since 1.1.0
      */
     @Override
     public boolean isNullOrEmpty(String isbn) {

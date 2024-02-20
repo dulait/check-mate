@@ -17,15 +17,15 @@ import java.util.regex.Pattern;
  * <a href="https://en.wikipedia.org/wiki/International_Bank_Account_Number#National_check_digits">here</a>.
  * </p>
  *
- * @since 1.1.0-alpha
+ * @since 1.1.0
  */
 public class IBANValidator implements Validator<String> {
     private static final IBANValidator instance = new IBANValidator();
 
     /**
-     * Default constructor for the IBANValidator class
+     * Private constructor for the IBANValidator class
      */
-    public IBANValidator() {
+    private IBANValidator() {
     }
 
     private static final int MIN_LENGTH = 8;
@@ -133,6 +133,7 @@ public class IBANValidator implements Validator<String> {
      * @return {@code true} if the IBAN is valid, {@code false} otherwise.
      * @throws NullIBANException  if the input IBAN is null.
      * @throws EmptyIBANException if the input IBAN is an empty string.
+     * @since 1.1.0
      */
     @Override
     public boolean isValid(String iban) {
@@ -160,6 +161,7 @@ public class IBANValidator implements Validator<String> {
      * @return {@code true} if the IBAN is null or an empty string, {@code false} otherwise.
      * @throws NullIBANException  if the IBAN is null or an empty string.
      * @throws EmptyIBANException if the IBAN is an empty string.
+     * @since 1.1.0
      */
     @Override
     public boolean isNullOrEmpty(String iban) {

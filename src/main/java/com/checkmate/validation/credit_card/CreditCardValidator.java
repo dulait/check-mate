@@ -6,9 +6,9 @@ import com.checkmate.exceptions.credit_card.NullCreditCardException;
 import com.checkmate.validation.Validator;
 
 /**
- * The CreditCardValidator class provides credit card number validations
+ * The CreditCardValidator class provides credit card number validations using the Luhn algorithm.
  *
- * @since 1.1.0-alpha
+ * @since 1.1.0
  */
 public class CreditCardValidator implements Validator<String> {
 
@@ -17,9 +17,9 @@ public class CreditCardValidator implements Validator<String> {
     private static final int MAX_CARD_NUMBER_LENGTH = 19;
 
     /**
-     * Default constructor for the CreditCardValidator class
+     * Private constructor for the CreditCardValidator class
      */
-    public CreditCardValidator() {
+    private CreditCardValidator() {
     }
 
     /**
@@ -38,6 +38,7 @@ public class CreditCardValidator implements Validator<String> {
      * @return {@code true} if the credit card number is valid, {@code false} otherwise.
      * @throws NullCreditCardException  if the credit card number is null or an empty string.
      * @throws EmptyCreditCardException if the credit card number is an empty string.
+     * @since 1.1.0
      */
     @Override
     public boolean isValid(String number) {
@@ -57,6 +58,7 @@ public class CreditCardValidator implements Validator<String> {
      * @return {@code true} if the credit card number is null or an empty string, {@code false} otherwise.
      * @throws NullCreditCardException  if the credit card number is null or an empty string.
      * @throws EmptyCreditCardException if the credit card number is an empty string.
+     * @since 1.1.0
      */
     @Override
     public boolean isNullOrEmpty(String number) {
