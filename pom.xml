@@ -4,10 +4,28 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.check-mate</groupId>
+    <groupId>io.github.dulait</groupId>
     <artifactId>check-mate</artifactId>
-    <packaging>pom</packaging>
-    <version>1.1.0-alpha</version>
+    <packaging>jar</packaging>
+    <version>1.1.0-beta</version>
+
+    <name>check-mate</name>
+    <url>http://maven.apache.org</url>
+
+    <developers>
+        <developer>
+            <name>Dusan Draskovic</name>
+            <email>draskovicdusan4@gmail.com</email>
+            <organization>GitHub</organization>
+            <organizationUrl>https://github.com/dulait/</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/dulait/check-mate.git</connection>
+        <developerConnection>scm:git:ssh://github.com:dulait/check-mate.git</developerConnection>
+        <url>https://github.com/dulait/check-mate.git</url>
+    </scm>
 
     <properties>
         <maven.compiler.source>20</maven.compiler.source>
@@ -24,28 +42,30 @@
     </dependencies>
 
     <distributionManagement>
-        <snapshotRepository>
-            <id>central</id>
-            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
         <repository>
-            <id>central</id>
-            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+            <id>github</id>
+            <name>GitHub dulait Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/dulait/check-mate</url>
         </repository>
+        <site>
+            <id>check-mate</id>
+            <url>D:\Documents\Work\Projekti\check-mate\target\apidocs</url>
+        </site>
     </distributionManagement>
 
     <build>
         <plugins>
             <plugin>
-                <groupId>org.sonatype.plugins</groupId>
-                <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.13</version>
-                <extensions>true</extensions>
-                <configuration>
-                    <serverId>central</serverId>
-                    <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
-                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                </configuration>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.3.1</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.maven.shared</groupId>
+                        <artifactId>maven-filtering</artifactId>
+                        <version>3.3.1</version>
+                    </dependency>
+                </dependencies>
             </plugin>
 
             <plugin>
@@ -62,7 +82,54 @@
                 </executions>
             </plugin>
 
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>4.0.0-M9</version>
+                <configuration>
+                    <outputDirectory>${project.build.directory}/site</outputDirectory>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.maven.wagon</groupId>
+                        <artifactId>wagon-ssh</artifactId>
+                        <version>3.5.2</version>
+                    </dependency>
+                </dependencies>
+                <executions>
+                    <execution>
+                        <id>deploy-site</id>
+                        <phase>site-deploy</phase>
+                        <goals>
+                            <goal>deploy</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
     </build>
+
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
 
 </project>
