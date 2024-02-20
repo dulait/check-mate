@@ -32,7 +32,7 @@ ghp_A?G?K?R?R?O?F?V?4?Q?e?8?f?m?L?o?c?V?t?V?f?f?0?0?p?z?f?O?R?Q?3?K?d?O?D?K (**r
     <dependency>
         <groupId>io.github.dulait</groupId>
         <artifactId>check-mate</artifactId>
-        <version>1.1.0-alpha</version>
+        <version>1.1.0</version>
     </dependency>
 </dependencies>
 ```
@@ -40,7 +40,7 @@ ghp_A?G?K?R?R?O?F?V?4?Q?e?8?f?m?L?o?c?V?t?V?f?f?0?0?p?z?f?O?R?Q?3?K?d?O?D?K (**r
 
 for Gradle projects, add the following to your `build.gradle` file
 ```groovy
-implementation 'io.github.dulait:check-mate:1.1.0-alpha'
+implementation 'io.github.dulait:check-mate:1.1.0'
 ```
 
 if you want to add it as an external library go to the [releases](https://github.com/dulait/check-mate/releases) page and download the latest version. <br>
