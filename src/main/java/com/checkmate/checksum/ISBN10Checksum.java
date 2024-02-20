@@ -3,7 +3,7 @@ package com.checkmate.checksum;
 /**
  * The ISBN10Checksum class provides a method for generating a check-digit of an ISBN-10 number.
  *
- * @since 1.1.0-alpha
+ * @since 1.1.0
  */
 public class ISBN10Checksum extends Checksum {
     private static final ISBN10Checksum instance = new ISBN10Checksum();
@@ -18,9 +18,9 @@ public class ISBN10Checksum extends Checksum {
     }
 
     /**
-     * Default constructor for the ISBN10Checksum class
+     * Private constructor for the ISBN10Checksum class
      */
-    public ISBN10Checksum() {
+    private ISBN10Checksum() {
     }
 
     @Override
@@ -48,6 +48,7 @@ public class ISBN10Checksum extends Checksum {
      *
      * @param isbn The ISBN-10 number to be validated.
      * @return {@code true} if the ISBN-10 number is valid according to the checksum algorithm, {@code false} otherwise.
+     * @since 1.1.0
      */
     @Override
     public boolean isValid(String isbn) {
@@ -62,6 +63,7 @@ public class ISBN10Checksum extends Checksum {
      *
      * @param isbn The ISBN for which the check-digit will be generated.
      * @return The valid ISBN-10 number with an appropriate checksum digit.
+     * @since 1.1.0
      */
     public String calculate(String isbn) {
 

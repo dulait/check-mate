@@ -10,7 +10,7 @@ package com.checkmate.checksum;
  * <a href="https://en.wikipedia.org/wiki/International_Bank_Account_Number#Algorithms">here</a>.
  * </p>
  *
- * @since 1.1.0-alpha
+ * @since 1.1.0
  */
 public class IBANChecksum extends Checksum {
 
@@ -26,9 +26,9 @@ public class IBANChecksum extends Checksum {
     }
 
     /**
-     * Default constructor for the IBANChecksum class
+     * Private constructor for the IBANChecksum class
      */
-    public IBANChecksum() {
+    private IBANChecksum() {
     }
 
     @Override
@@ -56,6 +56,7 @@ public class IBANChecksum extends Checksum {
      *
      * @param iban The IBAN to be validated.
      * @return {@code true} if the IBAN is valid according to the checksum algorithm, {@code false} otherwise.
+     * @since 1.1.0
      */
     @Override
     public boolean isValid(String iban) {
@@ -72,8 +73,9 @@ public class IBANChecksum extends Checksum {
      *
      * @param iban The IBAN for which the checksum will be generated.
      * @return The complete IBAN with its calculated checksum.
+     * @since 1.1.0
      */
-    private String calculate(String iban) {
+    public String calculate(String iban) {
         int p = 0;
         int m = getModulus();
         int r = getRadix();
@@ -104,6 +106,7 @@ public class IBANChecksum extends Checksum {
      *
      * @param iban The original IBAN.
      * @return The transformed numeric string.
+     * @since 1.1.0
      */
     private String transformIBAN(String iban) {
         String rearrangedIBAN = iban.replaceAll("\\s", "").substring(4) + iban.substring(0, 4);

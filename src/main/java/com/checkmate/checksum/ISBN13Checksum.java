@@ -3,7 +3,7 @@ package com.checkmate.checksum;
 /**
  * The ISBN13Checksum class provides a method for generating a check-digit of an ISBN-13 number.
  *
- * @since 1.1.0-alpha
+ * @since 1.1.0
  */
 public class ISBN13Checksum extends Checksum {
     private static final ISBN13Checksum instance = new ISBN13Checksum();
@@ -18,9 +18,9 @@ public class ISBN13Checksum extends Checksum {
     }
 
     /**
-     * Default constructor for the ISBN13Checksum class
+     * Private constructor for the ISBN13Checksum class
      */
-    public ISBN13Checksum() {
+    private ISBN13Checksum() {
     }
 
     @Override
@@ -48,6 +48,7 @@ public class ISBN13Checksum extends Checksum {
      *
      * @param isbn The ISBN-13 number to be validated.
      * @return {@code true} if the ISBN-13 number is valid according to the checksum algorithm, {@code false} otherwise.
+     * @since 1.1.0
      */
     @Override
     public boolean isValid(String isbn) {
@@ -62,6 +63,7 @@ public class ISBN13Checksum extends Checksum {
      *
      * @param isbn The ISBN-13 number for which the checksum digit will be generated.
      * @return The valid ISBN-13 number with an appropriate checksum digit.
+     * @since 1.1.0
      */
     public String calculate(String isbn) {
         isbn = isbn.replaceAll("[^0-9]", "");

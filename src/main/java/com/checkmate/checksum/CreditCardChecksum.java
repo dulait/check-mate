@@ -1,18 +1,18 @@
 package com.checkmate.checksum;
 
 /**
- * The CreditCardValidator class provides methods for validating the checksum of credit card numberArray.
+ * The CreditCardValidator class provides methods for validating the checksum of credit card.
  *
- * @since 1.1.0-alpha
+ * @since 1.1.0
  */
 public class CreditCardChecksum extends Checksum {
 
     private static final CreditCardChecksum instance = new CreditCardChecksum();
 
     /**
-     * Default constructor for the CreditCardChecksum class
+     * Private constructor for the CreditCardChecksum class
      */
-    public CreditCardChecksum() {
+    private CreditCardChecksum() {
     }
 
     /**
@@ -49,6 +49,7 @@ public class CreditCardChecksum extends Checksum {
      *
      * @param number The card number to be validated.
      * @return {@code true} if the card number is valid according to the checksum algorithm, {@code false} otherwise.
+     * @since 1.1.0
      */
     @Override
     public boolean isValid(String number) {

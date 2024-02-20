@@ -10,11 +10,10 @@ package com.checkmate.checksum;
  */
 public abstract class Checksum {
 
-
     /**
-     * Default constructor for the Checksum class
+     * Private constructor for the Checksum class
      */
-    public Checksum() {
+    Checksum() {
     }
 
     /**

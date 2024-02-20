@@ -3,7 +3,7 @@ package com.checkmate.checksum;
 /**
  * The JMBGChecksum class provides a method for generating a check-digit of a JMBG number.
  *
- * @since 1.1.0-alpha
+ * @since 1.1.0
  */
 public class JMBGChecksum extends Checksum {
 
@@ -19,9 +19,9 @@ public class JMBGChecksum extends Checksum {
     }
 
     /**
-     * Default constructor for the JMBGChecksum class
+     * Private constructor for the JMBGChecksum class
      */
-    public JMBGChecksum() {
+    private JMBGChecksum() {
     }
 
     @Override
@@ -50,6 +50,7 @@ public class JMBGChecksum extends Checksum {
      *
      * @param jmbg The JMBG to be validated.
      * @return {@code true} if the JMBG is valid according to the checksum algorithm, {@code false} otherwise.
+     * @since 1.1.0
      */
     @Override
     public boolean isValid(String jmbg) {
@@ -64,6 +65,7 @@ public class JMBGChecksum extends Checksum {
      *
      * @param jmbg The JMBG for which the check-digit will be generated.
      * @return The singleton instance of JMBGChecksum.
+     * @since 1.1.0
      */
     public String calculate(String jmbg) {
         int sum = 0;
