@@ -7,7 +7,7 @@
     <groupId>io.github.dulait</groupId>
     <artifactId>check-mate</artifactId>
     <packaging>jar</packaging>
-    <version>1.1.0-beta</version>
+    <version>1.1.0</version>
 
     <name>check-mate</name>
     <url>http://maven.apache.org</url>
