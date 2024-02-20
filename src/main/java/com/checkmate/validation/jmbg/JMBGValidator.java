@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
  * The JMBGValidator class provides methods for validating
  * and generating JMBG (Serbian Unique Master Citizen Number) numbers.
  *
- * @since @since 1.1.0
+ * @since 1.1.0
  */
 public class JMBGValidator implements Validator<String> {
     private static final JMBGValidator instance = new JMBGValidator();
